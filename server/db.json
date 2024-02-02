@@ -1,0 +1,60 @@
+{
+  "contacts": [
+    {
+      "id": "D6BNdWnHI",
+      "name": "Brad Gibson1",
+      "company": "YouTube",
+      "email": "brad@gmail.com",
+      "title": "Youtuber",
+      "mobile": "34543",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0g8R5VmgqDqpRCwQfw2Y9V-DM-iXS59R9hQ&usqp=CAU",
+      "groupId": "3"
+    },
+    {
+      "id": "TVobxeKbI",
+      "name": "Glenda Kim",
+      "company": "Friend",
+      "email": "glenda@gmail.com",
+      "title": "freelancer",
+      "mobile": "8880009991",
+      "photo": "https://www.kindpng.com/picc/m/163-1636340_user-avatar-icon-avatar-transparent-user-icon-png.png",
+      "groupId": "2"
+    },
+    {
+      "name": "dorisa shehi",
+      "photo": "https://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/256/User-icon.png",
+      "mobile": "0696377595",
+      "email": "doris.shehi2@gmail.com",
+      "company": "codetheweb",
+      "title": "ddd",
+      "groupId": "1",
+      "id": "I2GRjnx"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Colleague"
+    },
+    {
+      "id": "2",
+      "name": "Friend"
+    },
+    {
+      "id": "3",
+      "name": "Family"
+    },
+    {
+      "id": "4",
+      "name": "Service"
+    },
+    {
+      "id": "5",
+      "name": "Community"
+    },
+    {
+      "id": "6",
+      "name": "Social"
+    }
+  ]
+}
