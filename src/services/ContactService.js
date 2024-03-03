@@ -2,10 +2,10 @@ import axios from "axios";
 
 export class ContactService {
 
-    static serverURL = `http://localhost:7000`;
+    static serverURL = `http://localhost:9000`;
 
     static getGroups(){
-        let dataURL =  'http://localhost:7000/groups';
+        let dataURL =  'http://localhost:9000/groups';
         return axios.get(dataURL);
     }
 
