@@ -26,7 +26,7 @@ let ViewContact = () => {
 
                 setTimeout(()=>{
                     setState({
-                        ...state, 
+                        ...state,
                         loading: false,
                         contact: response.data,
                         group: groupResponse.data
@@ -34,14 +34,14 @@ let ViewContact = () => {
                     });
                 },200)
                 console.log(groupResponse.data);
-                
+
             } catch (error) {
                 setState({
                     ...state,
                     loading: false,
                     errorMessage: error.message
                 });
-                
+
             }
 
         }
@@ -50,7 +50,7 @@ let ViewContact = () => {
 
     },[contactId])
 
-    let {loading, contact, errorMessage, group} = state;
+    let {loading, contact, group} = state;
 
     return (
         <React.Fragment>
@@ -65,23 +65,23 @@ let ViewContact = () => {
                                 of the printing and typesetting industry. Lorem Ipsum
                                 has been the industry's standard dummy text ever since
                                 the 1500s, when an unknown printer took a galley of
-                                type and scrambled it to make a type specimen book. 
+                                type and scrambled it to make a type specimen book.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
             {
-                (loading) ? <Spinner/> : 
+                (loading) ? <Spinner/> :
                 <React.Fragment>
                     {
                         Object.keys(contact).length > 0 && Object.keys(contact).length > 0 &&
-                   
+
                         <section className="view-contact mt-3">
                             <div className="container">
                                 <div className="row align-items-center">
                                     <div className="col-md-4">
-                                        <img src={contact.photo} className="contact-img" />
+                                        <img src={contact.photo} alt="Contact" className="contact-img" />
                                     </div>
                                     <div className="col-md-8">
                                         <ul className="list-group">

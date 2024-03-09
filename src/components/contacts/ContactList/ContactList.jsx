@@ -27,7 +27,7 @@ let ContactList = () => {
 
                 setTimeout(()=>{
                     setState({
-                        ...state, 
+                        ...state,
                         loading: false,
                         contacts: response.data,
                         filteredContacts: response.data,
@@ -42,14 +42,14 @@ let ContactList = () => {
                 });
             }
         }
-    
+
         fetchData(); // Call the async function immediately
-    
-    }, []); 
+
+    }, []);
 
     let searchContacts = (event) => {
         setQuery({
-            ...query, 
+            ...query,
             "text" : event.target.value
         });
 
@@ -68,7 +68,7 @@ let ContactList = () => {
     let clickDelete = (contactId) => {
 
         async function deleteData() {
-       
+
             try {
                 let response = await ContactService.deleteContact(contactId);
                 if(response){
@@ -76,7 +76,7 @@ let ContactList = () => {
 
                     setTimeout(()=>{
                         setState({
-                            ...state, 
+                            ...state,
                             loading: false,
                             contacts: response.data,
                             filteredContacts: response.data,
@@ -84,7 +84,7 @@ let ContactList = () => {
                     },200)
 
                 }
-                
+
 
             } catch (error) {
                 setState({
@@ -92,30 +92,30 @@ let ContactList = () => {
                     loading: false,
                     errorMessage: error.message
                 });
-                
+
             }
         }
         deleteData();
 
     }
 
-    let {loading, contacts, errorMessage, filteredContacts} = state;
+    let {loading, filteredContacts} = state;
 
 
 
     return (
         <React.Fragment>
-           
+
             <section className="contact-search p-3">
                 <div className="container">
                     <div className="grid">
                         <div className="row">
                             <div className="col">
-            
+
                                 <p className="h3">
                                     Contact Manager
                                     <Link to={'/contacts/add'} className="btn btn-primary ms-2">
-                                        <i className="fa fa-plus-circle me-2"/> New 
+                                        <i className="fa fa-plus-circle me-2"/> New
                                     </Link>
                                 </p>
 
@@ -123,18 +123,18 @@ let ContactList = () => {
                                     of the printing and typesetting industry. Lorem Ipsum
                                     has been the industry's standard dummy text ever since
                                     the 1500s, when an unknown printer took a galley of
-                                    type and scrambled it to make a type specimen book. 
+                                    type and scrambled it to make a type specimen book.
                                 </p>
-                               
+
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-md-6">
                                 <form className="row">
-                                   
+
                                     <div className="col">
                                         <div className="mb-2">
-                                            <input 
+                                            <input
                                                 name="text"
                                                 value={query.text}
                                                 onChange={searchContacts}
@@ -146,7 +146,7 @@ let ContactList = () => {
                                             <input type="submit" className="btn btn-outline-dark" value={'Search'} />
                                         </div>
                                     </div>
-                                   
+
                                 </form>
                             </div>
                         </div>
@@ -157,13 +157,13 @@ let ContactList = () => {
 
 
             {
-                (loading) ? <Spinner/> : 
+                (loading) ? <Spinner/> :
                 <React.Fragment>
                     <section className="contact-list">
                         <div className="container">
                             <div className="row">
                                 {
-                                    (filteredContacts) && 
+                                    (filteredContacts) &&
                                     filteredContacts.map((contact) => {
                                         return(
 
@@ -172,8 +172,8 @@ let ContactList = () => {
                                                     <div className="card-body">
                                                         <div className="row align-items-center d-flex justify-content-around">
                                                             <div className="col-md-4">
-                                                                <img src={contact.photo} className="contact-img" />
-            
+                                                                <img src={contact.photo} alt="Contact" className="contact-img" />
+
                                                             </div>
                                                             <div className="col-md-7">
                                                                 <ul className="list-group">
@@ -198,20 +198,20 @@ let ContactList = () => {
                                                                 <button className="btn btn-danger my-1" onClick={() => clickDelete(contact.id)}>
                                                                     <i className="fa fa-trash"/>
                                                                 </button>
-            
+
                                                             </div>
                                                         </div>
-                                                    
+
                                                     </div>
-            
+
                                                 </div>
                                             </div>
 
                                         )
                                     })
                                 }
-         
-                                
+
+
                             </div>
                         </div>
 

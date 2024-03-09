@@ -5,7 +5,7 @@ let Spinner = () => {
     return (
         <React.Fragment>
           <div>
-            <img src={SpinnerImg} className="d-block m-auto" style={{width:'100px'}}/>
+            <img src={SpinnerImg} alt="Spinner" className="d-block m-auto" style={{width:'100px'}}/>
           </div>
         </React.Fragment>
     )

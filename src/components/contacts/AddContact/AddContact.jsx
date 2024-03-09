@@ -37,7 +37,7 @@ let AddContact = () => {
                 ...state,
                 loading: true // Set loading to true when fetching data
             });
-    
+
             try {
                 let response = await ContactService.getGroups();
                 setState({
@@ -53,9 +53,9 @@ let AddContact = () => {
                 });
             }
         }
-    
+
         fetchData();
-    }, []); 
+    }, []);
 
     let submitForm = (event) => {
 
@@ -63,7 +63,7 @@ let AddContact = () => {
         try {
             let response = ContactService.createContact(state.contact);
             if(response){
-                navigate('/contacts/list', {replace:true}); 
+                navigate('/contacts/list', {replace:true});
             }
         } catch (error) {
             setState({
@@ -80,7 +80,7 @@ let AddContact = () => {
 
 
 
-    let {loading, contact, groups, errorMessage} = state;
+    let {contact, groups} = state;
 
     return (
         <React.Fragment>
@@ -96,7 +96,7 @@ let AddContact = () => {
                                 of the printing and typesetting industry. Lorem Ipsum
                                 has been the industry's standard dummy text ever since
                                 the 1500s, when an unknown printer took a galley of
-                                type and scrambled it to make a type specimen book. 
+                                type and scrambled it to make a type specimen book.
                             </p>
                         </div>
                     </div>
@@ -104,7 +104,7 @@ let AddContact = () => {
                         <div className="col-md-4">
                             <form onSubmit={submitForm}>
                                 <div className="mb-2">
-                                    <input 
+                                    <input
                                         required = {true}
                                         name ="name"
                                         value = {contact.name}
@@ -112,7 +112,7 @@ let AddContact = () => {
                                         type = "text" className="form-control" placeholder="Name" />
                                 </div>
                                 <div className="mb-2">
-                                    <input 
+                                    <input
                                         required = {true}
                                         name ="photo"
                                         value = {contact.photo}
@@ -154,7 +154,7 @@ let AddContact = () => {
                                         onChange = {updateInput}
                                         className="form-control">
                                         <option value="">Select a Group</option>
-                                        { 
+                                        {
                                             groups &&
                                             groups.map((group)=>{
                                                 return(
